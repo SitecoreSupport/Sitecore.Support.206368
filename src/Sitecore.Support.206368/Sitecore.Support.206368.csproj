@@ -61,7 +61,6 @@
     <Compile Include="TemplateBuilderForm.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\zzz\Sitecore.Support.206368.config" />
     <Content Include="sitecore\shell\Applications\Templates\TemplateBuilder\TemplateBuilder.xml" />
   </ItemGroup>
   <ItemGroup>
