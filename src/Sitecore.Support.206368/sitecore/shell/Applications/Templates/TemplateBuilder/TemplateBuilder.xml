@@ -12,7 +12,7 @@
       <Script Src="/sitecore/shell/Applications/Templates/TemplateBuilder/TemplateBuilder.xml.js"/>
       <Script Src="/sitecore/shell/Applications/Content Manager/Content Editor.js"/>
 
-      <CodeBeside Type="Sitecore.Shell.Applications.Templates.TemplateBuilder.TemplateBuilderForm,Sitecore.Client"/>
+      <CodeBeside Type="Sitecore.Support.Shell.Applications.Templates.TemplateBuilder.TemplateBuilderForm,Sitecore.Support.206368"/>
 
       <input id="scActiveRibbonStrip" name="scActiveRibbonStrip" type="hidden" />
       <input id="Structure" type="hidden" />

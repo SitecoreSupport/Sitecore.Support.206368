@@ -423,9 +423,11 @@ namespace Sitecore.Support.Shell.Applications.Templates.TemplateBuilder
         name = Translate.Text("Add a new field");
         text = " style=\"color:#999999\"";
       }
-     
-      string text2 = this.IsReadOnly ? " disabled =\"true\"" : string.Empty;
-  
+      #region Sitecore.Support.206368
+      Item fieldItem = Client.ContentDatabase.GetItem(fieldID, this.ContentLanguage);
+      bool isFieldProtected = fieldItem != null && fieldItem.Appearance.ReadOnly;
+      string text2 = this.IsReadOnly || isFieldProtected ? " disabled =\"true\"" : string.Empty; //added checking "isFieldProtected"
+      #endregion
       output.Write(string.Concat(new string[]
           {
                 "<tr",
@@ -610,8 +612,11 @@ namespace Sitecore.Support.Shell.Applications.Templates.TemplateBuilder
         name = Translate.Text("Add a new section");
         text = " style=\"color:#999999\"";
       }
-      
-      string text2 = this.IsReadOnly  ? " disabled =\"true\"" : string.Empty; 
+      # region Sitecore.Support.206368
+      Item sectionItem = Client.ContentDatabase.GetItem(sectionID, this.ContentLanguage);
+      bool isSectionProtected = sectionItem != null && sectionItem.Appearance.ReadOnly;
+      string text2 = this.IsReadOnly || isSectionProtected ? " disabled =\"true\"" : string.Empty; //added checking "isSectionProtected"
+      #endregion
       output.Write(string.Concat(new string[]
           {
                 "<tr",
